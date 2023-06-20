@@ -1,5 +1,5 @@
 h1 {
-    background: green;
+    background: rgb(86, 220, 86);
 }
 .paragraph-1{
     background: blue;
@@ -18,4 +18,10 @@ h1 {
     font-weight: bold;
     font-size: 22px;
     font-family: 'Courier New', Courier, monospace;
+}
+.paragraph-4{
+    font-style: oblique;
+    font-size: 24;
+    text-shadow: green;
+    text-align: center;
 }

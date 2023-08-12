@@ -52,11 +52,16 @@ class Advertisement(models.Model):
             updated_date = self.updated_at.strftime("%H:%M:%S")
             return format_html('<span style="color:red; font-weight:bold;"> Сегодня в {} </span>', updated_date)
         return self.updated_at.strftime("%d.%m.%Y в %H:%M:%S")
+    @admin.display(description="Фото")
+    def get_html_image(self):
+        if self.image:
+            return format_html(
+                '<img src="{}" style="max-height:80px; max-width:80px;">',
+                self.image.url
+            )
 
     def __str__(self):
         return f"Advertisement(id={self.id}, title={self.title}, price={self.price})"
-        
-
 
     class Meta:
         db_table = 'advertisements'
